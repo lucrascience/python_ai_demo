@@ -1,1 +1,140 @@
+/* ---------- Global page styling ---------- */
 
+body {
+    background-color: #0a152b !important;   /* dark navy */
+    color: #f5f5f5 !important;              /* light text */
+}
+
+/* Center notebook and remove stark white background */
+div#notebook_panel, div#notebook {
+    background-color: transparent !important;
+}
+
+div.container {
+    width: 95% !important;
+}
+
+/* ---------- Header and logo ---------- */
+
+#header {
+    background: linear-gradient(90deg, #0a152b, #365670) !important;
+    border-bottom: 1px solid #00e5ff !important; /* cyan accent */
+    padding: 5px 10px !important;
+}
+
+#header-container {
+    display: flex;
+    align-items: center;
+}
+
+/* prepend your logo to the header */
+#header-container::before {
+    content: "";
+    display: inline-block;
+    width: 160px;
+    height: 40px;
+    margin-right: 12px;
+
+    background-image: url("/files/lucra_assets/lucra-logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+/* hide the default big Jupyter logo text if you like */
+#ipython_notebook {
+    display: none !important;
+}
+
+/* ---------- Toolbar & menu ---------- */
+
+#menubar, #maintoolbar {
+    background-color: #0a152b !important;
+    border: none !important;
+}
+
+#menubar .navbar, .navbar-inner {
+    background-color: transparent !important;
+    border: none !important;
+}
+
+#menubar .navbar a,
+#maintoolbar .btn,
+#maintoolbar .btn-group > .btn {
+    color: #f5f5f5 !important;
+}
+
+/* ---------- Code cells ---------- */
+
+div.code_cell {
+    border-radius: 6px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+div.code_cell .input_area {
+    background-color: #101a33 !important;   /* slightly lighter navy */
+    border-left: 3px solid #00e5ff !important;  /* cyan line */
+    color: #e0f7ff !important;
+}
+
+/* Code font and cursor */
+.CodeMirror {
+    background-color: transparent !important;
+    color: #e0f7ff !important;
+    font-family: "Fira Code", "Source Code Pro", monospace;
+    font-size: 13px;
+}
+
+/* line numbers */
+.CodeMirror-gutters {
+    background-color: #0b182e !important;
+    border-right: 1px solid #365670 !important;
+}
+
+/* syntax hints, comments, etc. */
+.cm-comment { color: #7c8da5 !important; }
+.cm-keyword { color: #ffca28 !important; }   /* gold keyword */
+.cm-string  { color: #80cbc4 !important; }
+.cm-number  { color: #ffab91 !important; }
+
+/* ---------- Markdown / text cells ---------- */
+
+div.text_cell {
+    border-radius: 6px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    background-color: #081020 !important;
+    border-left: 3px solid #f5c045 !important;   /* gold accent */
+    color: #f5f5f5 !important;
+}
+
+/* headings in markdown cells */
+.text_cell_render h1,
+.text_cell_render h2,
+.text_cell_render h3 {
+    color: #f5c045 !important;              /* gold headings */
+}
+
+/* links in markdown */
+.text_cell_render a {
+    color: #00e5ff !important;              /* cyan links */
+}
+
+/* ---------- Notebook title ---------- */
+
+#notebook_name {
+    color: #f5f5f5 !important;
+    font-weight: 600;
+}
+
+/* ---------- Misc ---------- */
+
+div.output_wrapper, div.output {
+    background-color: #0b182e !important;
+    border-radius: 6px;
+}
+
+div.output pre {
+    color: #e0f7ff !important;
+}
