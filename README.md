@@ -4,5 +4,5 @@
 Click below to launch our custom themed Lucra Science Jupyter Notebook:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](
-  https://mybinder.org/v2/gh/lucrascience/python_ai_demo/main?urlpath=tree%2Fdemo.ipynb
+  https://mybinder.org/v2/gh/lucrascience/python_ai_demo/main?urlpath=tree/demo.ipynb
 )
