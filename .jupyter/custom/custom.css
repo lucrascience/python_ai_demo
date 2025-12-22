@@ -35,7 +35,7 @@ div.container {
     height: 40px;
     margin-right: 12px;
 
-    background-image: url("../../lucra_assets/lucra-logo.png");
+    background-image: url("~/lucra_assets/lucra-logo.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: left center;
