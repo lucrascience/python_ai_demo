@@ -1,140 +1,104 @@
-/* ---------- Global page styling ---------- */
+/* ===== Lucra Science hard override theme ===== */
 
-body {
-    background-color: #0a152b !important;   /* dark navy */
-    color: #f5f5f5 !important;              /* light text */
+:root {
+    --lucra-bg: #0a152b;
+    --lucra-bg-alt: #101a33;
+    --lucra-output-bg: #0b182e;
+    --lucra-text: #ffffff;
+    --lucra-accent: #00e5ff;
+    --lucra-gold: #f5c045;
 }
 
-/* Center notebook and remove stark white background */
-div#notebook_panel, div#notebook {
-    background-color: transparent !important;
+/* Global */
+html, body {
+    background-color: var(--lucra-bg) !important;
+    color: var(--lucra-text) !important;
 }
 
-div.container {
-    width: 95% !important;
+/* Main containers */
+.container,
+#notebook,
+#notebook-container,
+#notebook_panel {
+    background-color: var(--lucra-bg) !important;
+    color: var(--lucra-text) !important;
 }
 
-/* ---------- Header and logo ---------- */
-
-#header {
+/* Header + menu */
+#header, #header-container,
+#menubar, #maintoolbar,
+.navbar, .navbar-inner {
     background: linear-gradient(90deg, #0a152b, #365670) !important;
-    border-bottom: 1px solid #00e5ff !important; /* cyan accent */
-    padding: 5px 10px !important;
+    border: none !important;
+    color: var(--lucra-text) !important;
 }
 
-#header-container {
-    display: flex;
-    align-items: center;
-}
-
-/* prepend your logo to the header */
+/* Lucra logo in header */
 #header-container::before {
     content: "";
     display: inline-block;
     width: 160px;
     height: 40px;
     margin-right: 12px;
-
     background-image: url("~/lucra_assets/lucra-logo.png");
-    background-size: contain;
     background-repeat: no-repeat;
     background-position: left center;
+    background-size: contain;
 }
 
-/* hide the default big Jupyter logo text if you like */
 #ipython_notebook {
     display: none !important;
 }
 
-/* ---------- Toolbar & menu ---------- */
-
-#menubar, #maintoolbar {
-    background-color: #0a152b !important;
-    border: none !important;
+/* Markdown cells */
+div.text_cell {
+    background-color: #081020 !important;
+    border-left: 3px solid var(--lucra-gold) !important;
+    color: var(--lucra-text) !important;
+    border-radius: 6px !important;
+    padding: 8px 10px !important;
 }
 
-#menubar .navbar, .navbar-inner {
-    background-color: transparent !important;
-    border: none !important;
+.text_cell_render h1,
+.text_cell_render h2,
+.text_cell_render h3 {
+    color: var(--lucra-gold) !important;
 }
 
-#menubar .navbar a,
-#maintoolbar .btn,
-#maintoolbar .btn-group > .btn {
-    color: #f5f5f5 !important;
+.text_cell_render a {
+    color: var(--lucra-accent) !important;
 }
 
-/* ---------- Code cells ---------- */
-
-div.code_cell {
-    border-radius: 6px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-}
-
+/* Code cells */
 div.code_cell .input_area {
-    background-color: #101a33 !important;   /* slightly lighter navy */
-    border-left: 3px solid #00e5ff !important;  /* cyan line */
-    color: #e0f7ff !important;
+    background-color: var(--lucra-bg-alt) !important;
+    border-left: 3px solid var(--lucra-accent) !important;
+    color: var(--lucra-text) !important;
 }
 
-/* Code font and cursor */
+/* CodeMirror */
 .CodeMirror {
     background-color: transparent !important;
-    color: #e0f7ff !important;
-    font-family: "Fira Code", "Source Code Pro", monospace;
-    font-size: 13px;
+    color: var(--lucra-text) !important;
 }
 
-/* line numbers */
 .CodeMirror-gutters {
     background-color: #0b182e !important;
     border-right: 1px solid #365670 !important;
 }
 
-/* syntax hints, comments, etc. */
-.cm-comment { color: #7c8da5 !important; }
-.cm-keyword { color: #ffca28 !important; }   /* gold keyword */
+.cm-keyword { color: var(--lucra-gold) !important; }
 .cm-string  { color: #80cbc4 !important; }
+.cm-comment { color: #7c8da5 !important; }
 .cm-number  { color: #ffab91 !important; }
 
-/* ---------- Markdown / text cells ---------- */
-
-div.text_cell {
-    border-radius: 6px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    background-color: #081020 !important;
-    border-left: 3px solid #f5c045 !important;   /* gold accent */
-    color: #f5f5f5 !important;
-}
-
-/* headings in markdown cells */
-.text_cell_render h1,
-.text_cell_render h2,
-.text_cell_render h3 {
-    color: #f5c045 !important;              /* gold headings */
-}
-
-/* links in markdown */
-.text_cell_render a {
-    color: #00e5ff !important;              /* cyan links */
-}
-
-/* ---------- Notebook title ---------- */
-
-#notebook_name {
-    color: #f5f5f5 !important;
-    font-weight: 600;
-}
-
-/* ---------- Misc ---------- */
-
+/* Outputs */
 div.output_wrapper, div.output {
-    background-color: #0b182e !important;
-    border-radius: 6px;
+    background-color: var(--lucra-output-bg) !important;
+    border-radius: 6px !important;
+    color: var(--lucra-text) !important;
 }
 
 div.output pre {
-    color: #e0f7ff !important;
+    color: var(--lucra-text) !important;
 }
