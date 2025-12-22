@@ -2,6 +2,3 @@
 set -e
 # Make sure classic Notebook is available
 pip install notebook
-
-mkdir -p ~/.jupyter/custom
-cp .jupyter/custom/custom.css ~/.jupyter/custom/custom.css
