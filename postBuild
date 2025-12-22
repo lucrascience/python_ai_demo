@@ -1,9 +1,8 @@
 #!/bin/bash
-set -e
+# Make sure classic Notebook is available
+pip install notebook
 
-# Make sure classic notebook is installed
-pip install notebook pandas
+# Force Binder to open in classic Notebook mode
+echo "c.NotebookApp.default_url = '/tree'" >> ~/.jupyter/jupyter_notebook_config.py
 
-# Ensure Jupyter sees the Lucra theme
-mkdir -p ~/.jupyter/custom
-cp .jupyter/custom/custom.css ~/.jupyter/custom/custom.css
+chmod +x postBuild
