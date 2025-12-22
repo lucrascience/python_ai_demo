@@ -1,1 +1,6 @@
+#!/bin/bash
+# Make sure classic Notebook is available
+pip install notebook
 
+# Force Binder to open in classic Notebook mode
+echo "c.NotebookApp.default_url = '/tree'" >> ~/.jupyter/jupyter_notebook_config.py
